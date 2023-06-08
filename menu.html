@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+  <style>
+    .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #070370;
+}
+
+li a {
+  display: block;
+  color: #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+    h1 {
+      text-align: center;
+      color: #070370;
+      padding: 3px;
+      font-size: 32px;
+    }
+
+    body { background-size: cover;
+      background-image: url('map.arxikhsilida.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    p{
+      background-color: #070370;
+      color: #eaeaea;
+    }
+    
+
+    /* Responsive Styles */
+    @media screen and (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
+      font-size: 30px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+
+<body>
+  <h1 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Αρχική Σελίδα</h1>
+  <ul>
+    <li><a>Μενού</a></li>
+    <li><a href="ATZ.html">Αρχαίο θέατρο Ζέας</a></li>
+    <li><a href="navy.html">Ναυτικό Μουσείο της Ελλάδος</a></li>
+    <li><a href="mikr.html">Μικρολίμανο</a></li>
+    <li><a href="mari.html">Μαρίνα Ζέας</a></li>
+    <li><a href="amp.html">Aρχαιολογικό Μουσείο Πειραιά</a></li>
+    <li><a href="peir.html">Πειραϊκή</a></li>
+    <li><a href="dimotiko.html">Δημοτικό θέατρο Πειραιά</a></li>
+    <li><a href="pinakothiki.html">Δημοτική Πινακοθήκη Πειραιά</a></li>
+    <li><a href="tr.html">Τρούμπα</a></li>
+    <li><a href="map.html">Χάρτης</a></li>
+  </ul>
+  
+
+  <div class="grid-container">
+    <div class="grid-item"><img src="arxaio_theatro_zeas.jpg" style="width:400px;height:300px;"><p class="button"><a style="background-color: #070370; color:#eaeaea;"  href="ATZ.html">Αρχαίο θέατρο Ζέας</a></p></div>
+    <div class="grid-item"><img src="nautiko_mouseio_ellados.jpg" style="width:400px;height:300px;"><p class="button"><a style="background-color: #070370; color:#eaeaea;"  href="navy.html">Ναυτικό Μουσείο της Ελλάδος</a></p></div>
+    <div class="grid-item"><img src="mikrolimano.jpg" style="width:400px;height:300px;"><p class="button"><a style="background-color: #070370; color:#eaeaea;"  href="mikr.html">Μικρολίμανο</a></p></div>  
+    <div class="grid-item"><img src="marina_zeas.jpg" style="width:400px;height:300px;"><p class="button"><a style="background-color: #070370; color:#eaeaea;"  href="mari.html">Μαρίνα Ζέας</a></p></div>
+    <div class="grid-item"><img src="arxio_mouseio_per.jpg" style="width:400px;height:300px;"><p class="button"><a style="background-color: #070370; color:#eaeaea;"  href="amp.html">Aρχαιολογικό Μουσείο Πειραιά</a></p></div>
+    <div class="grid-item"><img src="peiraikh.jpg" style="width:400px;height:300px;"><p class="button"><a style="background-color: #070370; color:#eaeaea;"  href="peir.html">Πειραϊκή</a></p></div>  
+    <div class="grid-item"><img src="dhmotiko_thetro.jpg" style="width:400px;height:300px;"><p class="button"><a style="background-color: #070370; color:#eaeaea;"  href="dimotiko.html">Δημοτικό θέατρο Πειραιά</a></p></div>
+    <div class="grid-item"><img src="dhmotikh_pinakothiki_per.jpg" style="width:400px;height:300px;"><p class="button"><a style="background-color: #070370; color:#eaeaea;"  href="pinakothiki.html">Δημοτική Πινακοθήκη Πειραιά</a></p></div>
+    <div class="grid-item"><img src="troupa.jpg" style="width:400px;height:300px;"><p class="button"><a style="background-color: #070370; color:#eaeaea;"  href="tr.html">Τρούμπα</a></p></div>  
+  </div>
+
+
+  </div>
+
+</body>
+</html>

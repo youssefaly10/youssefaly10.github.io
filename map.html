@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="el">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="description" content="Free Web tutorials">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="John Doe">
+	<link rel="stylesheet" href="style.css">
+	
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+	<!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" 
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+	 <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+	 <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+</head>
+<body>
+	 <div id="map"></div>
+</body>
+<script>
+	var map = L.map('map').setView([37.94296740923939, 23.644866810129752], 17);
+	
+	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19}).addTo(map);
+	
+	L.Control.geocoder().addTo(map);
+	
+	L.Routing.control({
+		waypoints: [
+			L.latLng(37.94296740923939, 23.644866810129752),
+		
+			L.latLng(37.94546983570866, 23.6468711231226) 
+		],
+		routeWhileDragging: true,
+
+		geocoder: L.Control.Geocoder.nominatim()
+	}).addTo(map);
+	
+	var pirmark_akmi = L.marker([37.94296740923939, 23.644866810129752],{alt: 'IEK AKMH'}).addTo(map);
+	var pirfmark_pinakothiki = L.marker([37.94546983570866, 23.6468711231226],{alt: 'Εθνική Πινακοθήκη Πειραιά'}).addTo(map);
+	
+	
+//	pirmark_akmi.bindPopup("<b>ΙΕΚ ΑΚΜΗ</b>").openPopup();
+//	pirfmark_pinakothiki.bindPopup("<b>Εθνική Πινακοθήκη Πειραιά</b>").popup();
+	pirfmark_nautmouseio.bindPopup("<b>Ναυτικό Μουσείο Πειραιά</b>").popup();
+	
+	function createButton(label, container) {
+		var btn = L.DomUtil.create('button', '', container);
+		btn.setAttribute('type', 'button');
+		btn.innerHTML = label;
+		return btn;
+}
+
+map.on('click', function(e) {
+    var container = L.DomUtil.create('div'),
+        startBtn = createButton('Start from this location', container),
+        destBtn = createButton('Go to this location', container);
+
+    L.popup()
+        .setContent(container)
+        .setLatLng(e.latlng)
+        .openOn(map);
+});
+
+
+</script>
+
+</html>
